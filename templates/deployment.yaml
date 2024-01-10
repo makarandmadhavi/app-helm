@@ -4,6 +4,7 @@ metadata:
   name: {{ include "webapp-api.fullname" . }}
   labels:
     {{- include "webapp-api.labels" . | nindent 4 }}
+    app: {{ include "webapp-api.fullname" . }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
